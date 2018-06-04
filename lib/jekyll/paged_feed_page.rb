@@ -1,6 +1,6 @@
 module Jekyll
   class PagedFeedPage < Page
-    def initialize(site, base, dir, name, page_number, pages_total, format)
+    def initialize(site, base, dir, name, page_number, pages_total, format, post_type)
       @site = site
       @dir = "/"
       @name = name
@@ -17,6 +17,7 @@ module Jekyll
       self.data['myself'] = page_number == 1 ? nil : page_number.to_s
       self.data['format'] = format
       self.data['page_number'] = page_number
+      self.data['post_type'] = post_type
     end
   end
 end
